@@ -12,8 +12,8 @@
 const userWord = prompt("Pari o dispari?");
 console.log("userWord", userWord, typeof userWord);
 
-const userNumber = parseInt(prompt("Scrivi un numero da uno a cinque"));
-console.log("userNumber", userNumber, typeof userNumber);
+// const userNumber = parseInt(prompt("Scrivi un numero da uno a cinque"));
+// console.log("userNumber", userNumber, typeof userNumber);
 
 // Prima soluzione
 // let computerNumber;
@@ -71,30 +71,68 @@ console.log("userNumber", userNumber, typeof userNumber);
 
 
 // Terza soluzione
-function pariDispari (userWord) {
-    const computerNumber = Math.floor(Math.random() * 5) + 1;
-    console.log("cpuNumber", computerNumber, typeof computerNumber);
+// function pariDispari (userWord) {
+//     const computerNumber = Math.floor(Math.random() * 5) + 1;
+//     console.log("cpuNumber", computerNumber, typeof computerNumber);
 
-    const somma = userNumber + computerNumber;
+//     const somma = userNumber + computerNumber;
+//     console.log("somma", somma, typeof somma);
+
+//     let risultato;
+
+//     if (somma % 2 == 0) {
+//         risultato = "pari";
+//     }
+//     else {
+//         risultato = "dispari";
+//     }
+
+//     if (userWord === risultato) {
+//         alert("Hai vinto!");
+//         console.log("Hai vinto!");
+//     }
+//     else {
+//         alert("Hai perso");
+//         console.log("Hai perso");
+//     }
+// }
+
+// const output = pariDispari(userWord);
+
+
+// Quarta soluzione
+function numberGenerator () {
+    number = Math.floor(Math.random() * 5) + 1;
+
+    return number;
+}
+
+const cpuNumber = numberGenerator();
+console.log("cpuNumber", cpuNumber, typeof cpuNumber);
+
+const userNumber = numberGenerator();
+console.log("userNumber", userNumber, typeof userNumber);
+
+function pariDispari (num1, num2) {
+    const somma = num1 + num2;
     console.log("somma", somma, typeof somma);
 
-    let risultato;
-
     if (somma % 2 == 0) {
-        risultato = "pari";
+        return "pari";
     }
     else {
-        risultato = "dispari";
-    }
-
-    if (userWord === risultato) {
-        alert("Hai vinto!");
-        console.log("Hai vinto!");
-    }
-    else {
-        alert("Hai perso");
-        console.log("Hai perso");
+        return "dispari";
     }
 }
 
-const output = pariDispari(userWord);
+const risultato = pariDispari(userNumber, cpuNumber);
+console.log("risultato", risultato, typeof risultato);
+
+if (userWord === risultato) {
+    alert("Hai vinto!");
+    console.log("Hai vinto!");
+}
+else {
+    alert("Hai perso");
+    console.log("Hai perso");
+}

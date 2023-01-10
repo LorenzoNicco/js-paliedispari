@@ -12,7 +12,21 @@ console.log("userWord", userWord, typeof userWord);
 function checkPalindroma (word) {
     const userArrayWord = userWord.split("");
     console.log("userArryWord", userArrayWord);
+
+    const reverseArrayWord = userArrayWord.reverse()
+    console.log("reverseArrayWord", reverseArrayWord);
+
+    const reverseWord = reverseArrayWord.join("");
+    console.log("reverseWord", reverseWord, typeof reverseWord);
+
+    if (userWord === reverseWord) {
+        alert("La tua parola è palindroma");
+        console.log("La tua parola è palindroma");
+    }
+    else {
+        alert("La tua parola non è palindroma");
+        console.log("La tua parola non è palindroma");
+    }
 }
 
 const risultato = checkPalindroma(userWord);
-console.log("userWord after", userWord);
